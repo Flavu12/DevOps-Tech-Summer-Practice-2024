@@ -133,3 +133,56 @@ Pod should have its own configuration inside of deployments configuration file
 Metadata part contains the labels and the specification part contains the selectors  
 
 `kubernetes get all` ->shows all the components that are inside the cluster
+
+### How to make it an External Service?
+- type: LoadBalancer -> assigns service an external IP adress and so accepts external requests  
+- nodePort -> the port where this external IP adress will be open(the port i have to put in the browser to access this service)
+    - must be between 30000-32767
+
+## Namespace
+ - organise resources in namespaces 
+ - virtual cluster inside a kubernetes clusters
+ - when you create a cluster by default kubernetes gives you namespaces
+  
+1. kubernetes-dashboard
+   - only with minikube
+2. kube-system
+   - **do not create or modify in kube-system**
+   - system processes
+   - Master & Kubectl processes
+3. kube-public 
+   - publicely accessible data
+   - a configmap, which contains cluster informations
+4. kube-node-lease
+   - heartbeats of nodes
+   - each node has associated lease object in namespace
+   - determines the availability of a node
+5. default 
+   - resources you create are located here
+
+`kubectl create namespace [name]` -> to create a namespace  
+You can create namespaces with a configuration file  
+
+Should not use for smaller projects  
+### Use Cases when to use Namespaces
+- Structure your components 
+- Avoid conflicts between teams
+- Share services between different environments
+- Share services between different environments
+- Access and Resource Limits on Namespaces Level 
+
+Each Namespace must define own ConfigMap, Secret
+Volume and Node can't be created within a Namespace  
+
+## Ingress 
+ 
+You need an implementation -> Ingress Controller  
+Ingress Controller:
+- evaluates all the rules
+- manages redirections
+- entrypoint to cluster
+- many third-party implementations
+
+No server in K8s cluster is accessible from outside!  
+
+`minikube addons enable ingress` -> automatically starts the K8s Nginx implementation of Ingress Controller  
