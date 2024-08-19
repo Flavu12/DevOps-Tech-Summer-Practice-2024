@@ -25,4 +25,8 @@ Automatically and continuously testing, building and releasing code changes to t
     - GitLab Server assigns pipeline jobs to available Runners 
 
 GitLab.com is actually a managed gitlab instance that offers multiple managed runners already out of the box  
-    
+
+## Pipeline Configuration 
+- Pipeline is written in code
+- Hosted inside application's git repository
+- Whole CI/CD configuration is written in YAML format -> .gitlab-ci.yaml
