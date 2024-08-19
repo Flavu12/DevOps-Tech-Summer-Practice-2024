@@ -15,3 +15,6 @@ Step 2
 Deploy applications
 
 Terraform is used for step 1 where you provision the infrastructure
+## Terraform Architecture
+- 2 main components: core and 
+- Core uses 2 input sources: TF-config  
