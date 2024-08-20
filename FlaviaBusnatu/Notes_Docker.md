@@ -14,9 +14,9 @@ Images are immutable. Once an image is created, it can't be modified. You can on
 Instrucțiunea **COPY** este folosită pentru a copia fișiere și directoare din sistemul gazdă în imaginea Docker. Este o operațiune simplă de copiere și este recomandată pentru majoritatea cazurilor de utilizare atunci când doar trebuie să transferi fișiere locale în imagine.  
 Instrucțiunea **ADD** este mai puternică și mai flexibilă decât COPY. În plus față de copierea fișierelor și directoarelor, ADD are funcționalități suplimentare:  
 
-1.Decomprimare arhive:  
+1. Decomprimare arhive:  
 Dacă sursa este un fișier de arhivă (.tar, .gz, .bz2, etc.), ADD îl va decomprima automat în destinație.  
-2.Copierea de la URL-uri:  
+2. Copierea de la URL-uri:  
 ADD poate copia fișiere direct de la URL-uri, descărcându-le în timpul construirii imaginii.  
 
 ## Managing Images & Containers
